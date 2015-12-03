@@ -21,26 +21,16 @@
     Copyright 2012-2013 Vkontakte Ltd
               2012-2013 Arseny Smirnov
               2012-2013 Aliaksei Levin
+			  2015 Alexander Rizaev
 */
 
 #pragma once
 
-#include "runtime/array_functions.h"
-#include "runtime/bcmath.h"
-#include "runtime/curl.h"
-#include "runtime/datetime.h"
-#include "runtime/drivers.h"
-#include "runtime/exception.h"
-#include "runtime/files.h"
-#include "runtime/integer_types.h"
-#include "runtime/interface.h"
-#include "runtime/math_functions.h"
-#include "runtime/mbstring.h"
-#include "runtime/misc.h"
-#include "runtime/openssl.h"
-#include "runtime/regexp.h"
-#include "runtime/rpc.h"
-#include "runtime/string_functions.h"
-#include "runtime/url.h"
-#include "runtime/zlib.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <string>
 
+#include "kphp_core.h"
+
+
+OrFalse <string> f$requests (const string &url, const string &post, const array<string>& headers);

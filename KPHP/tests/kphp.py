@@ -11,7 +11,7 @@ if not kphp_path:
   print "No KPHP_PATH or VK_PATH found, default is used"
   kphp_path = os.path.expanduser ("~/engine/src.vk")
 
-objs = "objs"
+objs = "objs32"
 bin = "bin"
 
 #TODO: add p=1 support
@@ -117,7 +117,7 @@ def get_dest():
   return dest
 
 def run_make (args = []):
-  check_call ("make -C %s -sj30" % root_path + " " + " ".join (args), shell = True)
+  check_call ("make m=32 -C %s -sj30" % root_path + " " + " ".join (args), shell = True)
 
 def run_parser():
   run_parser_cmd = " ".join ([
@@ -137,7 +137,7 @@ def run_parser():
 
 def run_cpp(use_net = False):
   run_cpp_cmd = " ".join ([
-                    "nice -n19 make",
+                    "nice -n19 make m=32",
                     "-sj30",
                     "-k",
                     "-f", kphp_makefile_path,
